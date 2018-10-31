@@ -1,0 +1,11 @@
+{{#> layouts/root title="Home" isTechniqueLayout=true }}
+
+{{#*inline "content"}}
+<ul>
+  {{#each people}}
+  <li>{{firstName}} {{lastName}}</li>
+  {{/each}}
+</ul>
+{{/inline}}
+
+{{/layouts/root}}

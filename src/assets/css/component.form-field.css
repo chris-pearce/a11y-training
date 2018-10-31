@@ -1,0 +1,10 @@
+@import 'config.css';
+
+.form-field:not(:last-of-type) {
+  margin-bottom: 6rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem !important;
+}

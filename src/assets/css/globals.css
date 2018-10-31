@@ -1,0 +1,20 @@
+@import 'config.css';
+
+html {
+  background-color: white;
+  color: #222;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+a {
+  color: $link-color;
+  font-weight: 600;
+}
+
+input[type='text'] {
+  background-color: aliceblue;
+  border: 1px solid lightblue;
+  padding: 0.4rem;
+  width: 60%;
+}
