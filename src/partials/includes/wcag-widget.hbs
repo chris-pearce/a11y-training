@@ -1,0 +1,17 @@
+<aside class="wcag-widget">
+  <h1>WCAG</h1>
+  <dl>
+    {{#each wcag}}
+      <dt>{{title}}</dt>
+      <dd>
+        <ul>
+          {{#each property}}
+            <li>
+              {{#if url}}<a href="{{url}}">{{displayName}}</a>{{else}}{{displayName}}{{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </dd>
+    {{/each}}
+  </dl>
+</aside>

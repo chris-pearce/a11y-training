@@ -1,0 +1,47 @@
+@import 'config.css';
+
+.example {
+  --padding: 1.5rem;
+  border-style: solid;
+  border-width: 3px;
+  border-top: 0;
+  border-radius: 6px;
+  margin-bottom: 4rem;
+  padding: var(--padding);
+}
+
+.example:last-child {
+  margin-bottom: 0;
+}
+
+.example.incorrect {
+  border-color: red;
+}
+
+.example.correct {
+  border-color: green;
+}
+
+.example > h1 {
+  color: white;
+  line-height: 1;
+  margin: calc(var(--padding) * -1);
+  margin-bottom: var(--padding);
+  padding: 1rem var(--padding);
+}
+
+.example.incorrect > h1 {
+  background-color: red;
+}
+
+.example.correct > h1 {
+  background-color: green;
+}
+
+.example-item:not(:last-of-type) {
+  margin-bottom: calc(var(--padding) * 1.5);
+}
+
+.example-item h1 {
+  margin-bottom: calc(var(--padding) / 2);
+}

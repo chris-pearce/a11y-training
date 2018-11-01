@@ -1,0 +1,115 @@
+{
+  "title": "Using label elements to associate text labels with form controls",
+  "wcag": [
+    {
+      "title": "Technique",
+      "property": [
+        {
+          "displayName": "H44",
+          "url": "https://www.w3.org/TR/WCAG20-TECHS/H44.html"
+        }
+      ]
+    },
+    {
+      "title": "Level",
+      "property": [
+        {
+          "displayName": "A",
+          "url": null
+        }
+      ]
+    },
+    {
+      "title": "Principle(s)",
+      "property": [
+        {
+          "displayName": "1. Perceivable",
+          "url": "https://www.w3.org/TR/WCAG21/#perceivable"
+        },
+        {
+          "displayName": "3. Understandable",
+          "url": "https://www.w3.org/TR/WCAG21/#understandable"
+        },
+        {
+          "displayName": "4. Robust",
+          "url": "https://www.w3.org/TR/WCAG21/#robust"
+        }
+      ]
+    },
+    {
+      "title": "Guideline(s)",
+      "property": [
+        {
+          "displayName": "1.1: Text Alternatives",
+          "url": "https://www.w3.org/TR/WCAG21/#text-alternatives"
+        },
+        {
+          "displayName": "1.3: Adaptable",
+          "url": "https://www.w3.org/TR/WCAG21/#adaptable"
+        },
+        {
+          "displayName": "3.3: Input Assistance",
+          "url": "https://www.w3.org/TR/WCAG21/#input-assistance"
+        },
+        {
+          "displayName": "4.1: Compatible",
+          "url": "https://www.w3.org/TR/WCAG21/#compatible"
+        }
+      ]
+    },
+    {
+      "title": "Success Criterion(s)",
+      "property": [
+        {
+          "displayName": "1.1.1: Non-text Content",
+          "url": "https://www.w3.org/TR/WCAG21/#non-text-content"
+        },
+        {
+          "displayName": "1.3.1: Info and Relationships",
+          "url": "https://www.w3.org/TR/WCAG21/#info-and-relationships"
+        },
+        {
+          "displayName": "3.3.2: Labels or Instructions",
+          "url": "https://www.w3.org/TR/WCAG21/#labels-or-instructions"
+        },
+        {
+          "displayName": "4.1.2: Name, Role, Value",
+          "url": "https://www.w3.org/TR/WCAG21/#name-role-value"
+        }
+      ]
+    }
+  ],
+  "example": [
+    {
+      "isCorrect": false,
+      "property": [
+        {
+          "displayName": "No label",
+          "hasControlLabel": false,
+          "hasControlPlaceholder": false
+        },
+        {
+          "displayName": "Label as a <code>p</code> element",
+          "hasControlLabel": true,
+          "hasControlPlaceholder": false
+        },
+        {
+          "displayName": "Label as a <code>placeholder</code> attribute",
+          "hasControlLabel": false,
+          "hasControlPlaceholder": true
+        }
+      ]
+    },
+    {
+      "isCorrect": true,
+      "property": [
+        {
+          "displayName": "Label as a <code>label</code> element",
+          "hasControlLabel": true,
+          "hasControlPlaceholder": false
+        }
+      ]
+    }
+  ],
+  "goodToKnow": []
+}

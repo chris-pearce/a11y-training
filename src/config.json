@@ -1,0 +1,17 @@
+{
+  "siteName": "a11y-training",
+  "siteSection": [
+    {
+      "title": "Techniques",
+      "url": "techniques"
+    },
+    {
+      "title": "Design patterns",
+      "url": "design-patterns"
+    },
+    {
+      "title": "Resources",
+      "url": "resources"
+    }
+  ]
+}
