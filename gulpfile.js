@@ -2,6 +2,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const fs = require('fs');
 const gulp = require('gulp');
+const { parallel, series } = require('gulp');
 const postcss = require('gulp-postcss');
 const data = require('gulp-data');
 const handlebars = require('gulp-compile-handlebars');
@@ -12,35 +13,23 @@ const { NODE_ENV } = process.env;
 const config = {
   src: './src',
   dest: './dist',
-  watchers: [
-    {
-      match: ['./src/**/*.hbs', './src/**/*.json'],
-      tasks: ['html'],
-    },
-    {
-      match: ['./src/assets/css/*.css'],
-      tasks: ['css'],
-    },
-  ],
 };
 
-gulp.task('clean', () => del(config.dest));
+const clean = () => del(config.dest);
 
-gulp.task('cleanCSS', () =>
+const cleanProd = () =>
   del([
     `${config.dest}/assets/css/*.css`,
     `!${config.dest}/assets/css/index.css`,
-  ])
-);
+  ]);
 
-gulp.task('css', () =>
+const compileCSS = () =>
   gulp
     .src(`${config.src}/assets/css/*.css`)
     .pipe(postcss())
-    .pipe(gulp.dest(`${config.dest}/assets/css`))
-);
+    .pipe(gulp.dest(`${config.dest}/assets/css`));
 
-gulp.task('html', () =>
+const compileHTML = () =>
   gulp
     .src(`${config.src}/pages/**/*.hbs`)
     .pipe(
@@ -63,31 +52,41 @@ gulp.task('html', () =>
         extname: '.html',
       })
     )
-    .pipe(gulp.dest(config.dest))
-);
+    .pipe(gulp.dest(config.dest));
 
-gulp.task('serve', () => {
+const serve = () =>
   browserSync.init({
     open: true,
     notify: true,
     files: [`${config.dest}/**/*`],
     server: config.dest,
   });
-});
 
-gulp.task('watch', () => {
-  config.watchers.forEach(item => {
+const watchers = [
+  {
+    match: [`${config.src}/**/*.hbs`, `${config.src}/**/*.json`],
+    tasks: series(compileHTML),
+  },
+  {
+    match: [
+      `${config.src}/assets/css/*.css`,
+      `${config.src}/assets/css/config/*.js`,
+    ],
+    tasks: series(compileCSS),
+  },
+];
+const watch = () =>
+  watchers.forEach(item => {
     gulp.watch(item.match, item.tasks);
   });
-});
 
-gulp.task('default', ['html', 'css'], done => {
-  if (NODE_ENV === 'development') {
-    gulp.start('serve');
-    gulp.start('watch');
-  }
-  if (NODE_ENV === 'production') {
-    gulp.start('cleanCSS');
-  }
-  done();
-});
+const defaultTasks =
+  NODE_ENV === 'production'
+    ? series(parallel([compileHTML, compileCSS]), cleanProd)
+    : series(
+        clean,
+        parallel([compileHTML, compileCSS]),
+        parallel(serve, watch)
+      );
+
+exports.default = defaultTasks;

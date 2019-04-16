@@ -1,0 +1,8 @@
+.c-pagination a {
+  display: inline-block;
+  margin-right: rem(3);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

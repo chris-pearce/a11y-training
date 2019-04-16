@@ -1,11 +1,21 @@
-{{#> layouts/root title="Home" isTechniqueLayout=true }}
+{{#> layouts/master title="Home"}}
 
-{{#*inline "content"}}
-<ul>
-  {{#each people}}
-  <li>{{firstName}} {{lastName}}</li>
-  {{/each}}
-</ul>
-{{/inline}}
+  {{#*inline "layouts/main"}}
 
-{{/layouts/root}}
+    <article class="c-long-form-copy">
+      <h1 class="c-heading c-heading--display">{{../title}}</h1>
+      <p>{{description}}</p>
+      <p>a11y Training is broken down into the following three sections:</p>
+      <ul>
+        {{#each siteSection}}
+          <li>
+            <a href="/{{url}}">{{title}}</a>
+            <p>{{description}}</p>
+          </li>
+        {{/each}}
+      </ul>
+    </article>
+
+    {{/inline}}
+
+    {{/layouts/master}}

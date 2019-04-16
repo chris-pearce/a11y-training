@@ -1,16 +1,24 @@
 {
-  "siteName": "a11y-training",
+  "siteName": "a11y Training",
   "siteSection": [
     {
       "title": "Techniques",
+      "description": "The most effective techniques from the Web Content Accessibility Guidelines (WCAG).",
       "url": "techniques"
     },
     {
-      "title": "Design patterns",
+      "title": "Design Patterns",
+      "description": "The most common design patterns from the WAI-ARIA Authoring Practices.",
       "url": "design-patterns"
     },
     {
+      "title": "Best Practices",
+      "description": "A collection of solid best practices that are relatively easy to implement.",
+      "url": "best-practices"
+    },
+    {
       "title": "Resources",
+      "description": "A collection of handy resources, for example, links to articles, blogs, videos, courses.",
       "url": "resources"
     }
   ]

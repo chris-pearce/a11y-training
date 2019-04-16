@@ -1,0 +1,19 @@
+{{#> layouts/master title="Techniques" section="techniques"}}
+
+  {{#*inline "layouts/main"}}
+
+    <article class="c-long-form-copy">
+      <h1 class="c-heading c-heading--display">{{siteSection.0.title}}</h1>
+      <p>{{siteSection.0.description}}</p>
+      <ul>
+        {{#each page}}
+          <li>
+            <a href="{{code}}.html">{{title}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </article>
+
+    {{/inline}}
+
+    {{/layouts/master}}

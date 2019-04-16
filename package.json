@@ -1,7 +1,7 @@
 {
   "name": "a11y-training",
   "version": "0.0.0",
-  "description": "A bunch of sandboxes used to teach a11y primarily for a screen reader.",
+  "description": "A place where you can get better at building accessible UI's.",
   "scripts": {
     "clean": "rm -rf dist",
     "prestart": "yarn clean",
@@ -10,24 +10,25 @@
     "build": "NODE_ENV=production gulp"
   },
   "devDependencies": {
-    "backpack.css": "^1.1.0",
+    "backpack.css": "^2.0.0",
     "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
-    "eslint": "^5.8.0",
+    "del": "^4.1.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "gulp": "^3.9.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "gulp": "^4.0.0",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-data": "^1.3.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.1.2",
     "postcss-csso": "^3.0.0",
+    "postcss-functions": "^3.0.0",
     "postcss-import": "^12.0.1",
-    "postcss-preset-env": "^6.3.0",
-    "postcss-simple-vars": "^5.0.1",
-    "prettier": "^1.14.3"
+    "postcss-preset-env": "^6.6.0",
+    "postcss-simple-vars": "^5.0.2",
+    "prettier": "^1.17.0"
   }
 }

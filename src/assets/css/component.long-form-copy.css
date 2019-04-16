@@ -1,0 +1,22 @@
+.c-long-form-copy {
+  & h1 {
+    margin-bottom: $spacing-large3x;
+  }
+
+  & p:not(:last-child) {
+    margin-bottom: $spacing-large1x;
+  }
+
+  & ul {
+    list-style: disc;
+    list-style-position: outside;
+  }
+
+  & li:not(:last-child) {
+    margin-bottom: $spacing-small1x;
+  }
+
+  & li p {
+    font-style: italic;
+  }
+}

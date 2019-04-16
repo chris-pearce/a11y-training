@@ -1,59 +1,70 @@
-@import 'config.css';
+$_border: 1px solid gainsboro;
 
-.header {
-  border-bottom: 1px solid gainsboro;
-  border-top: 1px solid gainsboro;
+.l-header {
+  background-color: $color-white;
+  border-bottom: $_border;
+  border-top: $_border;
   display: flex;
-  font-family: 'Fira Code', monospace;
-  font-weight: 300;
-  margin-bottom: 4rem;
+  margin-bottom: $spacing-large3x;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-.header a {
+.l-header a {
   text-decoration: none;
 }
 
-.header h1 {
+/* Setup all the Flex containers and items */
+.l-header__logo {
   display: flex;
 }
 
-.header h1 a {
-  background-color: var(--link-color);
-  color: white;
-  padding: 1rem;
-}
-
-.header nav,
-.header h1 a,
-.header nav ul,
-.header nav li,
-.header nav a {
+.l-header__logo a,
+.l-header__nav,
+.l-header__nav ul,
+.l-header__nav li,
+.l-header__nav a {
   display: flex;
   flex: 1;
 }
 
-.header nav ul {
-  list-style: none;
+.l-header__logo a {
+  background-color: $color-blue-default;
+  color: $color-white;
+  font-weight: 900;
+  padding: $spacing-default;
 }
 
-.header nav a {
+.l-header__nav a {
   align-items: center;
-  border-left: 1px solid gainsboro;
-  font-size: 1.5rem;
+  border-left: $_border;
   font-variant-caps: all-petite-caps;
   justify-content: center;
-  letter-spacing: 0.1rem;
+
+  &:hover,
+  &:focus {
+    background-color: $color-blue-default;
+    color: $color-white;
+  }
+
+  &.is-active {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $color-blue-light1x;
+      color: $color-blue-default;
+    }
+  }
 }
 
-.header nav a:hover,
-.header nav a:focus {
-  background-color: var(--link-color);
-  color: white;
-}
+.l-main-content-header {
+  align-items: baseline;
+  display: flex;
+  margin-bottom: $spacing-large4x;
 
-.header nav .is-active,
-.header nav .is-active:hover,
-.header nav .is-active:focus {
-  background-color: lightblue;
-  color: var(--link-color);
+  & *:first-child {
+    flex: 1;
+    margin-right: $spacing-default;
+  }
 }

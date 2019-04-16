@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html {{#if section}} class="{{section}}" {{/if}}>
+<html {{#if section}} class="p-{{section}}" {{/if}} lang="en-au">
   <head>
     <meta charset="utf-8">
     <title>
@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="/assets/css/index.css">
   </head>
   <body>
-    {{> includes/header}}
+    {{> layouts/header}}
 
-    {{> content}}
+    <main class="l-main">
+      {{> layouts/main}}
+    </main>
   </body>
 </html>

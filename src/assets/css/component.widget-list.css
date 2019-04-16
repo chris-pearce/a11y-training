@@ -1,0 +1,8 @@
+.c-widget-list__item {
+  display: inline-block;
+  margin-right: $spacing-small3x;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

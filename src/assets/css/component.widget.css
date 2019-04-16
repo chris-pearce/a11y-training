@@ -1,0 +1,69 @@
+$_border-width: 2px;
+$_border: $_border-width solid $color-blue-default;
+$_border-radius: 6px;
+$_color-background: $color-blue-light2x;
+$_spacing-default: $spacing-default;
+
+.c-widget {
+  font-size: $typography-size-small1x;
+}
+
+.c-widget__heading {
+  background-color: $_color-background;
+  border: $_border;
+  border-radius: $_border-radius;
+  display: inline-block;
+  padding: $spacing-small3x $spacing-small1x;
+}
+
+.c-widget--list-item .c-widget__heading {
+  position: relative;
+  z-index: 1;
+}
+
+.c-widget__details[open] .c-widget__heading {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -$_border-width;
+}
+
+.c-widget--list-item .c-widget__details[open] .c-widget__heading {
+  border-bottom: $_border-width solid transparent;
+  margin-bottom: 0;
+}
+
+.c-widget__list {
+  background-color: $_color-background;
+  border: $_border;
+  border-radius: $_border-radius;
+  border-top-left-radius: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: $_spacing-default $spacing-large1x;
+  padding: $_spacing-default;
+}
+
+.c-widget__list--flat {
+  display: block;
+}
+
+.c-widget--list-item .c-widget__list {
+  margin-top: -$_border-width;
+  position: absolute;
+  top: 100%;
+}
+
+.c-widget__list-title {
+  font-weight: 900;
+}
+
+.c-widget__description:not(:last-child) {
+  margin-bottom: $_spacing-default;
+}
+
+@supports (display: grid) {
+  .c-widget__description {
+    margin-bottom: 0;
+  }
+}
