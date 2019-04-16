@@ -1,0 +1,8 @@
+.c-widget-nav-bar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-large4x;
+  margin-top: $spacing-small1x;
+  position: relative;
+}

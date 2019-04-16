@@ -1,1 +1,18 @@
-{{> layouts/techniques}}
+{{#> layouts/techniques}}
+  {{#*inline "content"}}
+    <form action="">
+      <div class="c-example__form-field">
+        {{#if hasControlLabel}}
+          {{#if isCorrect}}
+            <label for="{{@../index}}{{@index}}" class="c-example__form-label">Your first
+              name:</label>
+          {{else}}
+            <p class="c-example__form-label">John:</p>
+          {{/if}}
+        {{/if}}
+        <input class="c-example__form-control" type="text" id="{{@../index}}{{@index}}"
+          {{#if hasControlPlaceholder}} placeholder="Your first name" {{/if}}>
+      </div>
+    </form>
+    {{/inline}}
+    {{/layouts/techniques}}

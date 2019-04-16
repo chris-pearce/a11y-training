@@ -1,6 +1,4 @@
 {
-  "people": [
-    { "firstName": "Yehuda", "lastName": "Katz" },
-    { "firstName": "Carl", "lastName": "Lerche" }
-  ]
+  "title": "Improve your a11y skills and help make the Web a more accessible and inclusive place",
+  "description": "There's tonnes of resources out there on Web Accessibility or to use its abbreviation as the numeronym a11y, however, it can get overwhelming. I wanted to help with this by creating an online resource that hopefully makes it easier for people to get better at a11y."
 }

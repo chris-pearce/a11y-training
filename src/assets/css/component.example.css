@@ -1,47 +1,72 @@
-@import 'config.css';
+$_color-incorrect: red;
+$_color-correct: green;
+$_padding-container: $spacing-large1x;
 
-.example {
-  --padding: 1.5rem;
+.c-example {
   border-style: solid;
   border-width: 3px;
   border-top: 0;
   border-radius: 6px;
-  margin-bottom: 4rem;
-  padding: var(--padding);
+  margin-bottom: $spacing-large3x;
+  padding: $_padding-container;
 }
 
-.example:last-child {
+.c-example:last-child {
   margin-bottom: 0;
 }
 
-.example.incorrect {
-  border-color: red;
+.c-example.is-incorrect {
+  border-color: $_color-incorrect;
 }
 
-.example.correct {
-  border-color: green;
+.c-example.is-correct {
+  border-color: $_color-correct;
 }
 
-.example > h1 {
-  color: white;
+.c-example__heading {
+  color: $color-white;
+  font-size: $typography-size-large1x;
+  font-weight: 700;
   line-height: 1;
-  margin: calc(var(--padding) * -1);
-  margin-bottom: var(--padding);
-  padding: 1rem var(--padding);
+  margin: -$_padding-container;
+  margin-bottom: $_padding-container;
+  padding: $spacing-default $_padding-container;
 }
 
-.example.incorrect > h1 {
-  background-color: red;
+.c-example__heading span {
+  display: inline-block;
+  margin-right: $spacing-small3x;
 }
 
-.example.correct > h1 {
-  background-color: green;
+.c-example.is-incorrect .c-example__heading {
+  background-color: $_color-incorrect;
 }
 
-.example-item:not(:last-of-type) {
-  margin-bottom: calc(var(--padding) * 1.5);
+.c-example.is-correct .c-example__heading {
+  background-color: $_color-correct;
 }
 
-.example-item h1 {
-  margin-bottom: calc(var(--padding) / 2);
+.c-example__inner:not(:last-of-type) {
+  margin-bottom: $spacing-large2x;
+}
+
+.c-example__subheading {
+  font-weight: 500;
+  margin-bottom: $spacing-small2x;
+}
+
+.c-example__form-field:not(:last-of-type) {
+  margin-bottom: $spacing-large3x;
+}
+
+.c-example__form-label {
+  display: block;
+  margin-bottom: $spacing-small3x;
+}
+
+.c-example__form-control {
+  background-color: $color-blue-light2x;
+  border: 1px solid $color-blue-light1x;
+  padding: $spacing-small3x;
+  width: 60%;
 }

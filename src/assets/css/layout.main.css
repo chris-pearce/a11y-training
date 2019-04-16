@@ -1,11 +1,5 @@
-@import 'config.css';
-
-.main {
+.l-main {
   margin-left: auto;
   margin-right: auto;
-  max-width: 70ch;
-}
-
-.main > h1 {
-  margin-bottom: 3rem;
+  max-width: 60ch;
 }

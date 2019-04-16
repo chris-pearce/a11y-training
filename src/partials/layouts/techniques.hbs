@@ -1,13 +1,37 @@
-{{#> layouts/root section=techniques}}
+{{#> layouts/master section="techniques"}}
 
-  {{#*inline "content"}}
+  {{#*inline "layouts/main"}}
 
-    <main class="main">
-      <h1>{{title}}</h1>
-      {{> includes/wcag-widget}}
-      {{> includes/example}}
-    </main>
+    <article>
+      <header>
+        <h1 class="c-heading c-heading--display">{{title}}</h1>
+        <div class="c-widget-nav-bar">
+          <div class="c-widget-nav-bar__item">
+            <ul class="c-widget-list">
+              <li class="c-widget-list__item">
+                {{> components/wcag-widget}}
+              </li>
+              {{#if ux}}
+                <li class="c-widget-list__item">
+                  {{> components/ux-widget}}
+                </li>
+              {{/if}}
+            </ul>
+          </div>
+          <div class="c-widget-nav-bar__item">
+            <nav class="c-pagination" aria-label="Navigate to the previous or next page or to this
+            section's home page">
+              {{#if paginateUrls.prev}}<a href="{{paginateUrls.prev}}.html">← Prev</a>{{/if}}
+              <a href="./">Home</a>
+              {{#if paginateUrls.next}}<a href="{{paginateUrls.next}}.html">Next →</a>{{/if}}
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {{> components/example}}
+    </article>
 
     {{/inline}}
 
-    {{/layouts/root}}
+    {{/layouts/master}}

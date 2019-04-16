@@ -1,0 +1,12 @@
+{{#each example}}
+  <section class="c-example {{#if isCorrect}}is-correct{{else}}is-incorrect{{/if}}">
+    <h1 class="c-example__heading">{{#if isCorrect}}<span>👍</span> Correct{{else}}<span>👎</span>
+        Incorrect{{/if}}</h1>
+    {{#each property}}
+      <section class="c-example__inner">
+        <h1 class="c-example__subheading">{{{displayName}}}</h1>
+        {{> content isCorrect=../isCorrect}}
+      </section>
+    {{/each}}
+  </section>
+{{/each}}

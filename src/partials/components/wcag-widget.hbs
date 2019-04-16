@@ -1,0 +1,19 @@
+<aside class="c-widget c-widget--list-item">
+  <details class="c-widget__details">
+    <summary class="c-widget__heading">WCAG details</summary>
+    <dl class="c-widget__list">
+      {{#each wcag}}
+        <dt class="c-widget__list-title">{{title}}:</dt>
+        <dd class="c-widget__description">
+          <ul class="c-widget__nested-list">
+            {{#each property}}
+              <li>
+                {{#if url}}<a href="{{url}}">{{displayName}}</a>{{else}}{{displayName}}{{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        </dd>
+      {{/each}}
+    </dl>
+  </details>
+</aside>

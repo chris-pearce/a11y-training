@@ -1,20 +1,19 @@
-@import 'config.css';
-
 html {
-  background-color: white;
-  color: #222;
-  padding-bottom: 4rem;
-  padding-top: 2rem;
+  background-color: $color-white;
+  color: $color-body-copy;
+  font-size: $typography-size-default;
+  line-height: 1.7;
+  padding-bottom: $spacing-large4x;
 }
 
 a {
-  color: $link-color;
-  font-weight: 600;
-}
+  color: $color-blue-default;
 
-input[type='text'] {
-  background-color: aliceblue;
-  border: 1px solid lightblue;
-  padding: 0.4rem;
-  width: 60%;
+  &:hover,
+  &:focus {
+    background-color: $color-blue-default;
+    color: $color-white;
+    text-decoration: none;
+    transition: all 0.1s linear;
+  }
 }

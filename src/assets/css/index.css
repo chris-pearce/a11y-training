@@ -1,9 +1,13 @@
 @charset 'UTF-8';
 
 @import 'backpack.css';
-@import 'config.css';
 @import 'globals.css';
 @import 'layout.header.css';
 @import 'layout.main.css';
+@import 'component.heading.css';
 @import 'component.example.css';
-@import 'component.form-field.css';
+@import 'component.pagination.css';
+@import 'component.widget.css';
+@import 'component.widget-list.css';
+@import 'component.widget-nav-bar.css';
+@import 'component.long-form-copy.css';
